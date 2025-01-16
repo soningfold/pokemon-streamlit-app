@@ -57,8 +57,3 @@ If you'd like to run the app locally:
 
 [][]
 
-## Acknowledgments
-
-- **PokéAPI** for providing Pokémon images and additional data.
-- **Streamlit** for enabling easy development of interactive apps.
-
