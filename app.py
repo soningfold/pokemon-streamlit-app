@@ -51,7 +51,7 @@ with tab1:
 
     st.write(f"{details['name'].iloc[0]} is a {details['type_1'].iloc[0]} type Pokemon. Its species is {details['species'].iloc[0]} and its status is {details['status'].iloc[0]}.")
     if details['abilities_number'].iloc[0] >= 1:
-        st.write(f"Its abilities are {details['ability_1'].iloc[0]}")      
+        st.write(f"Its main ability is {details['ability_1'].iloc[0]}.")      
 
     
 with tab2:
