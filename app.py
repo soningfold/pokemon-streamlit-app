@@ -6,10 +6,9 @@ df = pd.read_csv('pokemon.csv')
 
 st.title("Pokemon Lookup App")
 
-#Consider pokedex number somehow - for now using id to lookup
-pokemon_number = st.number_input("Pokemon Number: ", min_value=0, max_value=int(max(df['id'])))
+pokemon_number = st.number_input("Pokemon Number: ", min_value=1, max_value=int(max(df['pokedex_number'])))
 
-details = df[df['id'] == pokemon_number]
+details = df[df['pokedex_number'] == pokemon_number]
 
 # Display the name, height, weight and other attributes of the pokemon.
 
