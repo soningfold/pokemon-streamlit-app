@@ -5,7 +5,7 @@ This interactive web application allows users to explore and compare Pokémon da
 ## Features
 
 - **Search Pokémon by Number**:
-  Enter a Pokémon's Pokédex number to fetch details such as name, height, weight, and types.
+  Enter a Pokémon's Pokédex number to fetch details such as name, height, weight, types and a short description.
 
 - **Pokémon Sprite**:
   Displays the official image of the selected Pokémon.
