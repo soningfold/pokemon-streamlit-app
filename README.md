@@ -43,11 +43,6 @@ If you'd like to run the app locally:
    streamlit run app.py
    ```
 
-## Requirements
-
-- Python 3.7+
-- All required libraries are listed in `requirements.txt`.
-
 ## Data Source
 
 - Pokémon data: Loaded from a CSV file (`pokemon.csv`).
