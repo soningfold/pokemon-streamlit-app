@@ -55,5 +55,6 @@ If you'd like to run the app locally:
 
 ## Example
 
-[][]
+![Pokémon App Screenshot](/screenshot.png)
+
 
