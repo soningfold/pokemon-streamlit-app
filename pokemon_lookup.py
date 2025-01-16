@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import altair as alt
-# import matplotlib.pyplot as plt 
 
 df = pd.read_csv('pokemon.csv')
 
@@ -48,12 +47,3 @@ for stat in stats:
     
     st.altair_chart(chart)
     st.write('---')
-
-# for stat in stats:
-#     st.write(stat)
-#     random_pokemon = df.sample(5)
-#     selected_pokemon = details[stat]
-#     data = pd.concat([random_pokemon[stat], selected_pokemon])
-#     st.bar_chart(data)
-#     st.write('---')
-    
