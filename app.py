@@ -44,6 +44,8 @@ with tab1:
         if response.status_code == 200:
             image_url = response.json()['sprites']['front_default']
             st.image(image_url, width=200) #, use_container_width=True
+        else:
+            st.error('Pokemon image not found.')
 
     
 with tab2:
