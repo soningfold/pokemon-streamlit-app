@@ -4,19 +4,27 @@ import matplotlib.pyplot as plt
 import requests
 import altair as alt
 
-tab1, tab2 = st.tabs(["Pokemon Data", "Stats Comparison"])
 
 
 df = pd.read_csv('pokemon.csv')
 
+st.title("Pokemon Lookup App")
+
+tab1, tab2 = st.tabs(["Pokemon Data", "Stats Comparison"])
+
+st.sidebar.title('Pokemon Options')
+st.sidebar.header('Choose Options:')
+
+pokemon_number = st.sidebar.number_input("Pokemon Number: ", min_value=1, max_value=int(max(df['pokedex_number'])))
+
+details = df[df['pokedex_number'] == pokemon_number]
+
+st.sidebar.caption(f"Select stats below - the stats for {details.iloc[0]['name']} will be compared to 5 other random Pokemon:")
+stats = st.sidebar.multiselect('What stats do you want to compare?',
+                ['height_m','weight_kg','total_points','hp','speed']
+                )
 
 with tab1:
-    st.title("Pokemon Lookup App")
-
-    pokemon_number = st.number_input("Pokemon Number: ", min_value=1, max_value=int(max(df['pokedex_number'])))
-
-    details = df[df['pokedex_number'] == pokemon_number]
-    
     # Creating columns with custom width ratios
     col1, col2, col3 = st.columns([5, 0.1, 2])
 
@@ -40,11 +48,8 @@ with tab1:
     
 with tab2:
     st.subheader('Stats Comparison')
-    st.caption(f'Select stats below - the stats for {details.iloc[0]['name']} will be compared to 5 other random Pokemon:')
+    
 
-    stats = st.multiselect('What stats do you want to compare?',
-                ['height_m','weight_kg','total_points','hp','speed']
-                )
 
     for stat in stats:
         st.write(stat.title())
@@ -70,7 +75,7 @@ with tab2:
     # Now compare these stats to the averages for each Pokemon type
 
     st.subheader('Average Stats for this Pokemon\'s Type')
-    st.caption(f'The stats you selected above for {details.iloc[0]['name']} will be compared to the average stats of all Pokemon of the same type:')
+    st.caption(f"The stats you selected above for {details.iloc[0]['name']} will be compared to the average stats of all Pokemon of the same type:")
 
     for stat in stats:
         st.write(stat.title())
